@@ -2,7 +2,7 @@
   <div class="header">
     <div class="content-wrapper">
       <div class="avatar">
-        <img :src="seller.avatar" art="logo" >
+        <img v-lazy="seller.avatar">
       </div>
       <div class="content">
         <div class="title">
@@ -85,9 +85,13 @@
     data(){
       return{
         isShow:false,
-        classMap: ["decrease", "discount", "guarantee", "invoice", "special"]
+        classMap: ["decrease", "discount", "guarantee", "invoice", "special"],
+        imgsrc:'./avatar.jpg'
+
+
       }
     },
+
     methods:{
       showDetail(isShow){
         this.isShow=isShow
